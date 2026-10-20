@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "claude-sopro-tts"
+version = "0.1.0"
+description = "Claude Code text-to-speech: reads Claude's replies aloud with Sopro TTS on your CPU."
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = { text = "MIT" }
+authors = [{ name = "claude-sopro-tts contributors" }]
+dependencies = [
+  "sopro>=2.2.0",
+  "sounddevice>=0.4.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+claude-tts = "claude_tts.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/marques576/claude-tts"
+Repository = "https://github.com/marques576/claude-tts"
+Model = "https://github.com/samuel-vitorino/sopro"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/claude_tts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
