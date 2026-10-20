@@ -427,6 +427,7 @@ def do_install(
 
     print()
     print("Done. Claude's replies will be read aloud from the next turn on.")
+    print(f"  speed                 # {settings.speed:g}x (claude-tts speed 1.0 for faithful pace)")
     print("  claude-tts status     # daemon / model state")
     print("  claude-tts off | on   # mute / unmute")
     print("  claude-tts voice FILE # use your own 5-20s reference clip")

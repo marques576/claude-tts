@@ -64,7 +64,7 @@ class Settings:
     lang: Optional[str] = None
     port: int = DEFAULT_PORT
     volume: float = 1.0
-    speed: float = 1.0
+    speed: float = 1.25
     player: str = "auto"
 
     @property

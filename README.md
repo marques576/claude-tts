@@ -10,6 +10,9 @@ It is a **Claude Code hook**: `install` registers it on `Stop` (speak the reply)
 `SessionEnd` (stop), so it fires automatically with nothing for the model to
 remember to call.
 
+Replies are read at **1.25×** by default, pitch preserved; `claude-tts speed 1.0`
+gives the faithful pace.
+
 ```
 you: "fix the auth refresh bug"
 claude: (works, writes the fix)
@@ -60,7 +63,7 @@ claude-tts off          # mute
 claude-tts on           # unmute
 claude-tts stop         # shut up mid-sentence (~0.2 s)
 claude-tts speak "hello" # test the voice
-claude-tts speed 1.25   # talk faster (0.5-2.0, pitch preserved, live)
+claude-tts speed 1.0    # faithful pace (default is 1.25; 0.5-2.0, live)
 claude-tts kill         # stop the daemon and free its ~1 GB of RAM
 claude-tts voice        # which reference clip is used
 claude-tts voice me.wav # switch reference clip (5-20 s of clean speech)
@@ -77,7 +80,7 @@ Everything is configurable in `~/.config/claude-tts/config.json`:
 | `int8` | `false` | int8 AR weights, faster on CPU |
 | `steps` | model default (2) | acoustic solver steps; higher = slower, cleaner |
 | `lang` | auto | `en`, `pt`, `fr`, `de` hint |
-| `speed` | `1.0` | playback rate, `0.5`-`2.0`, pitch preserved (WSOLA) |
+| `speed` | `1.25` | playback rate, `0.5`-`2.0`, pitch preserved (WSOLA); `1.0` skips the time-stretcher |
 | `volume` | `1.0` | playback gain |
 | `port` | `45733` | local daemon port |
 | `player` | `auto` | `auto`, `external`, or a command like `afplay` |

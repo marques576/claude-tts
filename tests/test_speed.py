@@ -52,3 +52,10 @@ def test_clamp():
     assert clamp_speed(5) == 2.0
     assert clamp_speed("nope") == 1.0
     assert clamp_speed(float("nan")) == 1.0
+
+
+def test_default_speed_is_125():
+    from claude_tts.config import Settings
+
+    assert Settings().speed == 1.25
+    assert Settings().to_dict()["speed"] == 1.25
