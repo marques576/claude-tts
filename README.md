@@ -130,4 +130,3 @@ claude-tts uninstall --purge  # also config, cache, the uv tool
   the TTS model.
 - The bundled reference voice is a public-domain LibriVox excerpt; see
   `src/claude_tts/assets/NOTICE.md`.
-- This project: MIT.
